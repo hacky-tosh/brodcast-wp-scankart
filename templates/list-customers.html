@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+
+{% block title %}All Contacts | ScanKart AI{% endblock %}
+
+{% block content %}
+
+
+<body class="nk-body bg-lighter npc-general has-sidebar ">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-menu-trigger"><a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none"
+                            data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a><a href="#"
+                            class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex"
+                            data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a></div>
+                    <div class="nk-sidebar-brand"><a href="index.html" class="logo-link nk-sidebar-logo"><img
+                                class="logo-light logo-img" src="images/logo.png" srcset="/demo1/images/logo2x.png 2x"
+                                alt="logo"><img class="logo-dark logo-img" src="images/logo-dark.png"
+                                srcset="/demo1/images/logo-dark2x.png 2x" alt="logo-dark"></a></div>
+                </div>
+                <div class="nk-sidebar-element nk-sidebar-body">
+                    <div class="nk-sidebar-content">
+                        <div class="nk-sidebar-menu" data-simplebar>
+                            <ul class="nk-menu">
+
+                                <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Dashboards</h6>
+                                </li>
+                                <li class="nk-menu-item"><a href="index.html" class="nk-menu-link"><span
+                                            class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span><span
+                                            class="nk-menu-text">WP Campaign Dashboard</span></a></li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-wrap ">
+                <div class="nk-header nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ms-n1"><a href="#"
+                                    class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em
+                                        class="icon ni ni-menu"></em></a></div>
+                            <div class="nk-header-brand d-xl-none"><a href="index.html" class="logo-link"><img
+                                        class="logo-light logo-img" src="images/logo.png"
+                                        srcset="/demo1/images/logo2x.png 2x" alt="logo"><img class="logo-dark logo-img"
+                                        src="images/logo-dark.png" srcset="/demo1/images/logo-dark2x.png 2x"
+                                        alt="logo-dark"></a></div>
+                            <div class="nk-header-news d-none d-xl-block">
+                                <div class="nk-news-list"><a class="nk-news-item" href="#">
+                                        <div class="nk-news-icon"><em class="icon ni ni-card-view"></em></div>
+                                        <div class="nk-news-text">
+                                            <p>WP Campaign Messages</span></p><em class="icon ni ni-external"></em>
+                                        </div>
+                                    </a></div>
+                            </div>
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="dropdown user-dropdown"><a href="#" class="dropdown-toggle"
+                                            data-bs-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar sm"><em class="icon ni ni-user-alt"></em></div>
+                                                <div class="user-info d-none d-md-block">
+                                                    <div class="user-status">Administrator</div>
+                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-end dropdown-menu-s1">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="user-card">
+                                                    <div class="user-avatar"><span>AB</span></div>
+                                                    <div class="user-info"><span class="lead-text">Abu Bin
+                                                            Ishtiyak</span><span
+                                                            class="sub-text">info@softnio.com</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="user-profile-regular.html"><em
+                                                                class="icon ni ni-user-alt"></em><span>View
+                                                                Profile</span></a></li>
+                                                    <li><a href="user-profile-setting.html"><em
+                                                                class="icon ni ni-setting-alt"></em><span>Account
+                                                                Setting</span></a></li>
+                                                    <li><a href="user-profile-activity.html"><em
+                                                                class="icon ni ni-activity-alt"></em><span>Login
+                                                                Activity</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign
+                                                                out</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="nk-block-head nk-block-head-sm">
+                                    <div class="nk-block-between">
+                                        <div class="nk-block-head-content">
+                                            <h3 class="nk-block-title page-title">Contacts</h3>
+                                            <div class="nk-block-des text-soft">
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                        <div class="nk-block-head-content">
+                                            <div class="toggle-wrap nk-block-tools-toggle"><a href="#"
+                                                    class="btn btn-icon btn-trigger toggle-expand me-n1"
+                                                    data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                                                <div class="toggle-expand-content" data-content="pageMenu">
+                                                    <ul class="nk-block-tools g-3">
+                                                        <li>
+                                                            <div class="dropdown">
+                                                                <a href="#"
+                                                                    class="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                                                                    data-bs-toggle="modal" data-bs-target="#modalForm">
+                                                                    <em
+                                                                        class="d-none d-sm-inline icon ni ni-upload"></em>
+                                                                    <span>Upload Excel</span>
+                                                                    <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                                </a>
+                                                            </div>
+
+                                                        </li>
+                                                        <li class="nk-block-tools-opt d-none d-sm-block"><a href="#"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#singleContactForm"
+                                                                class="btn btn-primary"><em
+                                                                    class="icon ni ni-plus"></em><span>Add
+                                                                    Contact</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nk-block">
+                                    <div class="card card-bordered card-stretch">
+                                        <div class="card-inner-group">
+                                            <div class="card-inner p-0">
+                                                <table class="nk-tb-list nk-tb-ulist">
+                                                    <thead>
+                                                        <tr class="nk-tb-item nk-tb-head">
+                                                            <th class="nk-tb-col nk-tb-col-check">
+                                                                <div
+                                                                    class="custom-control custom-control-sm custom-checkbox notext">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="pid-all"><label class="custom-control-label"
+                                                                        for="pid-all"></label>
+                                                                </div>
+                                                            </th>
+                                                            <th class="nk-tb-col"><span class="sub-text">Customer
+                                                                    Name</span></th>
+                                                            <th class="nk-tb-col tb-col-lg"><span
+                                                                    class="sub-text">Number</span></th>
+                                                            <th class="nk-tb-col tb-col-lg"><span
+                                                                    class="sub-text">Source</span></th>
+                                                            <th class="nk-tb-col tb-col-lg"><span class="sub-text">Date
+                                                                    Added</span></th>
+                                                            <th class="nk-tb-col nk-tb-col-tools text-end">
+                                                                <div class="dropdown"><a href="#"
+                                                                        class="btn btn-xs btn-trigger btn-icon dropdown-toggle me-n1"
+                                                                        data-bs-toggle="dropdown" data-offset="0,5"><em
+                                                                            class="icon ni ni-more-h"></em></a>
+
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="contacts-table">
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="card-inner">
+                                                <div class="nk-block-between-md g-3">
+                                                    <!-- <div class="g">
+                                                        <ul
+                                                            class="pagination justify-content-center justify-content-md-start">
+                                                            <li class="page-item"><a class="page-link" href="#">Prev</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><span class="page-link"><em
+                                                                        class="icon ni ni-more-h"></em></span></li>
+                                                            <li class="page-item"><a class="page-link" href="#">6</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">7</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div> -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nk-footer">
+                    <div class="container-fluid">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright"> &copy; 2023 ScanKart AI</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modalForm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Upload File</h5><a href="#" class="close" data-bs-dismiss="modal"
+                        aria-label="Close"><em class="icon ni ni-cross"></em></a>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-validate is-alter">
+
+                        <div class="form-file"><input type="file" class="form-file-input" id="excel-file-upload"><label
+                                class="form-file-label" for="customFile">Choose file</label></div>
+                        <br><br>
+
+                        <div class="form-group text-center">
+                            <button id="upload-contact-btn" class="btn btn-lg btn-primary">Upload File</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer bg-light"><span class="sub-text"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="singleContactForm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Contact</h5><a href="#" class="close" data-bs-dismiss="modal"
+                        aria-label="Close"><em class="icon ni ni-cross"></em></a>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-validate is-alter">
+                        <div class="form-group"><label class="form-label" for="full-name">Full Name</label>
+                            <div class="form-control-wrap"><input type="text" class="form-control"
+                                    id="contact-form-name" required></div>
+                        </div>
+                        <div class="form-group"><label class="form-label" for="email-address">Whatsapp Number</label>
+                            <div class="form-control-wrap"><input type="text" class="form-control"
+                                    id="contact-form-number" required></div>
+                        </div>
+
+                        <div class="form-group"><button id="singleContactUpload" class="btn btn-lg btn-primary">Add Contact</button></div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-light"><span class="sub-text"></span></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pmo-lv pmo-dark"><a class="pmo-close" href="#"><em class="ni ni-cross"></em></a><a class="pmo-wrap"
+            target="_blank" href="https://softnio.com/get-early-access/">
+            <div class="pmo-text text-white">Looking for functional script for Investment Platform? Check out <em
+                    class="ni ni-arrow-long-right"></em></div>
+        </a></div><a class="pmo-st pmo-dark" target="_blank" href="https://softnio.com/get-early-access/">
+        <div class="pmo-st-img"><img src="../images/landing/promo-investorm.png" alt="Investorm"></div>
+        <div class="pmo-st-text">Looking for Advanced <br> Investment Platform?</div>
+    </a>
+    <script src="{{ url_for('static', filename='js/bundlee5ca.js') }}?ver=3.2.3"></script>
+    <script src="{{ url_for('static', filename='js/scriptse5ca.js') }}?ver=3.2.3"></script>
+    <script src="{{ url_for('static', filename='js/demo-settingse5ca.js') }}?ver=3.2.3"></script>
+    <script src="{{ url_for('static', filename='js/custom/contacts.js') }}"></script>
+
+</body>
+
+</html>
+
+
+
+
+{% endblock %}
