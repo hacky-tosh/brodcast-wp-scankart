@@ -1,7 +1,6 @@
 from functools import wraps
-from flask import Flask, request, jsonify
+from flask import  request, jsonify
 import jwt
-from app import app
 from dotenv import load_dotenv
 import os
 
@@ -9,9 +8,11 @@ load_dotenv()
 
 
 def token_required(f):
+
     @wraps(f)
     def decorated(*args, **kwargs):
-        token = request.headers.get('Authorization')
+        # token = request.headers.get('Authorization')
+        token = request.cookies.get('Authorization')
 
         if not token:
             return jsonify({'message': 'Token is missing'}), 401

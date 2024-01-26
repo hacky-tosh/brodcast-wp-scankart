@@ -1,7 +1,7 @@
-from flask import Blueprint, jsonify
-from routes.auth_routes import auth_blueprint
+from flask import Blueprint
+# from routes.auth_routes import auth_blueprint
 from flask.templating import render_template
-
+from middleware.middleware import token_required
 
 user_blueprint = Blueprint('user', __name__)
 
@@ -16,5 +16,6 @@ def signup():
 
 
 @user_blueprint.route('/list-customers', methods=['GET'])
+@token_required
 def home():
     return render_template('list-customers.html')

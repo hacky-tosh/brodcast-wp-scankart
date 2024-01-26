@@ -1,6 +1,7 @@
-const url = "http://localhost:4000/api/";
-const user_email = localStorage.getItem("email");
+var url = "http://localhost:4000/api/";
+var user_email = localStorage.getItem("email");
 $(document).ready(function () {
+
     displayUserData();
 
 
@@ -16,7 +17,7 @@ $(document).ready(function () {
     $('#singleContactUpload').on('click', function () {
         let name = $('#contact-form-name').val();
         let number = $('#contact-form-number').val();
-        let user_email = "bankashu74@gmail.com"
+        let user_email = user_email
         if (!name || !number) {
             alert("Please enter all the fields");
             return;
@@ -56,10 +57,10 @@ $(document).ready(function () {
             alert("Please select a valid Excel file with .xlsx extension.");
             return;
         }
-        let user_email = "bankashu74@gmail.com";
+        let email = user_email;
         let formData = new FormData();
         formData.append('file', file);
-        formData.append('user_email', user_email);
+        formData.append('user_email', email);
         console.log(formData);
 
         $.ajax({
@@ -82,6 +83,14 @@ $(document).ready(function () {
         });
     });
 
+    $('#dashSignout').on('click', function (event) {
+        localStorage.clear();
+        document.cookie = "Authorization" + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        window.location.href = '/user/login';
+    });
+
+
+
 });
 
 
@@ -91,38 +100,44 @@ function displayUserData() {
         type: 'GET',
         dataType: 'json',
         data: {
-            "email": "bankashu74@gmail.com"
+            "email": user_email
         },
         success: function (response) {
-            console.log(response);
-            let html = '';
-            for (let i = 0; i < response.length; i++) {
-                html += `
-                    <tr class="nk-tb-item">
-                        <td class="nk-tb-col nk-tb-col-check">
-                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                <input type="checkbox" class="custom-control-input" id="pid-0${i + 1}">
-                                <label class="custom-control-label" for="pid-0${i + 1}"></label>
-                            </div>
-                        </td>
-                        <td class="nk-tb-col">
-                            <div class="project-title">
-                                <div class="user-avatar sq bg-purple">
-                                    <span>${response[i].name.slice(0, 2)}</span>
+            if (response.length == 0) {
+                $('#contacts-table').append('<tr ><td colspan="5">No contacts found</td></tr>');
+                return;
+            } else {
+                let html = '';
+                for (let i = 0; i < response.length; i++) {
+                    html += `
+                        <tr class="nk-tb-item">
+                            <td class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="pid-0${i + 1}">
+                                    <label class="custom-control-label" for="pid-0${i + 1}"></label>
                                 </div>
-                                <div class="project-info">
-                                    <h6 class="title">${response[i].name}</h6>
+                            </td>
+                            <td class="nk-tb-col">
+                                <div class="project-title">
+                                    <div class="user-avatar sq bg-purple">
+                                        <span>${response[i].name.slice(0, 2)}</span>
+                                    </div>
+                                    <div class="project-info">
+                                        <h6 class="title">${response[i].name}</h6>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="nk-tb-col tb-col-lg"><span>${response[i].number}</span></td>
-                        <td class="nk-tb-col"><span>${response[i].source}</span></td>
-                        <td class="nk-tb-col"><span>${response[i].date_added.slice(0, 17)}</span></td>
-                    </tr>
-                `;
+                            </td>
+                            <td class="nk-tb-col tb-col-lg"><span>${response[i].number}</span></td>
+                            <td class="nk-tb-col"><span>${response[i].source}</span></td>
+                            <td class="nk-tb-col"><span>${response[i].date_added.slice(0, 17)}</span></td>
+                        </tr>
+                    `;
+                }
+
+                $('#contacts-table').append(html);
+
             }
 
-            $('#contacts-table').append(html);
         },
     });
 }
