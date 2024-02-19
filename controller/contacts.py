@@ -6,7 +6,7 @@ from datetime import datetime
 from config.firebase_config import db  # Assuming this is correctly configured
 import pandas as pd
 
-users_collection = db.collection('user')
+users_collection = db.collection('wpuser')
 
 
 def get_all_contacts():

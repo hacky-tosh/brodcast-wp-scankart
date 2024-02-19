@@ -8,9 +8,9 @@ import jwt
 from dotenv import load_dotenv
 import os
 load_dotenv()
-from config.firebase_config import db  # Assuming this is correctly configured
+from config.firebase_config import db 
 
-users_collection = db.collection('user')
+users_collection = db.collection('wpuser')
 
 
 def signup():

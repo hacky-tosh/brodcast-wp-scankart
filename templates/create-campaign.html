@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}All Contacts | ScanKart AI{% endblock %}
+{% block title %}Create Campaign | ScanKart AI{% endblock %}
 
 {% block content %}
 
@@ -114,7 +114,7 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Contacts</h3>
+                                            <h3 class="nk-block-title page-title">Create Campaign</h3>
                                             <div class="nk-block-des text-soft">
                                                 <p></p>
                                             </div>
@@ -124,46 +124,41 @@
                                                     class="btn btn-icon btn-trigger toggle-expand me-n1"
                                                     data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                                 <div class="toggle-expand-content" data-content="pageMenu">
-                                                    <ul class="nk-block-tools g-3">
-                                                        <li>
-                                                            <div class="dropdown">
-                                                                <a href="#"
-                                                                    class="dropdown-toggle btn btn-white btn-dim btn-outline-light"
-                                                                    data-bs-toggle="modal" data-bs-target="#modalForm">
-                                                                    <em
-                                                                        class="d-none d-sm-inline icon ni ni-upload"></em>
-                                                                    <span>Upload Excel</span>
-                                                                    <em class="dd-indc icon ni ni-chevron-right"></em>
-                                                                </a>
-                                                            </div>
 
-                                                        </li>
-
-                                                        <li class="nk-block-tools-opt d-none d-sm-block"><a
-                                                                 data-bs-toggle="modal"
-                                                                data-bs-target="#singleContactForm"
-                                                                class="btn btn-primary"><em
-                                                                    class="icon ni ni-plus"></em><span>Add
-                                                                    Contact</span></a>
-                                                        </li>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="nk-block">
-                                    <div class="card card-bordered card-stretch">
-                                        <div class="card-inner-group">
-                                            <div class="card-inner p-0">
-                                                <table class="nk-tb-list nk-tb-ulist">
+
+
+                                    <div class="row g-gs">
+
+
+                                        <div class="col-md-6 col-xxl-4">
+
+
+
+                                            <div class="card card-bordered card-full"
+                                                style="height: 300px; overflow-y: auto;">
+                                                <div class="card-inner border-bottom">
+                                                    <div class="card-title-group">
+                                                        <div class="card-title">
+                                                            <h6 class="title">Select Contacts</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="class=" nk-msg-list" data-simplebar="init"">
+                                                    <table class=" nk-tb-list nk-tb-ulist">
                                                     <thead>
                                                         <tr class="nk-tb-item nk-tb-head">
                                                             <th class="nk-tb-col nk-tb-col-check">
                                                                 <div
                                                                     class="custom-control custom-control-sm custom-checkbox notext">
                                                                     <input type="checkbox" class="custom-control-input"
-                                                                        id="pid-all"><label class="custom-control-label"
+                                                                        id="pid-all">
+                                                                    <label class="custom-control-label"
                                                                         for="pid-all"></label>
                                                                 </div>
                                                             </th>
@@ -171,52 +166,80 @@
                                                                     Name</span></th>
                                                             <th class="nk-tb-col tb-col-lg"><span
                                                                     class="sub-text">Number</span></th>
-                                                            <th class="nk-tb-col tb-col-lg"><span
-                                                                    class="sub-text">Source</span></th>
-                                                            <th class="nk-tb-col tb-col-lg"><span class="sub-text">Date
-                                                                    Added</span></th>
-                                                            <th class="nk-tb-col nk-tb-col-tools text-end">
-                                                                <div class="dropdown"><a href="#"
-                                                                        class="btn btn-xs btn-trigger btn-icon dropdown-toggle me-n1"
-                                                                        data-bs-toggle="dropdown" data-offset="0,5"><em
-                                                                            class="icon ni ni-more-h"></em></a>
-
-                                                                </div>
-                                                            </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody id="contacts-table">
-
-
+                                                        <!-- Table content goes here -->
                                                     </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="card-inner">
-                                                <div class="nk-block-between-md g-3">
-                                                    <!-- <div class="g">
-                                                        <ul
-                                                            class="pagination justify-content-center justify-content-md-start">
-                                                            <li class="page-item"><a class="page-link" href="#">Prev</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">1</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">2</a>
-                                                            </li>
-                                                            <li class="page-item"><span class="page-link"><em
-                                                                        class="icon ni ni-more-h"></em></span></li>
-                                                            <li class="page-item"><a class="page-link" href="#">6</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">7</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">Next</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div> -->
+                                                    </table>
+                                                </div>
 
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="col-md-6 col-xxl-4">
+                                            <div class="card card-bordered h-100">
+                                                <div class="card-inner">
+                                                    <div class="card-head">
+                                                    </div>
+                                                    <form >
+                                                        <div class="form-group"><label class="form-label"
+                                                                for="campaign-name">Campaign Name</label>
+                                                            <div class="form-control-wrap">
+                                                                <div class="form-icon form-icon-left"><em
+                                                                        class="icon ni ni-hot-fill"></em></div><input
+                                                                    type="text" class="form-control" id="campaign-name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group"><label id="selectedContacts" class="form-label"
+                                                                for="campaign-type"> </label>
+                                                           
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="campaign-message">Message to Send</label>
+                                                            <div class="form-control-wrap">
+                                                                <div class="form-icon form-icon-left">
+                                                                    <em class="icon ni ni-hot-fill"></em>
+                                                                </div>
+                                                                <textarea rows="5" class="form-control" id="campaign-message"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                        <!-- <div class="form-group"><label class="form-label">Select
+                                                                Date</label>
+                                                            <div class="form-control-wrap">
+                                                                <div class="form-icon form-icon-left"><em
+                                                                        class="icon ni ni-calendar"></em></div><input
+                                                                    type="text" id="campaign-date" class="form-control date-picker"
+                                                                    data-date-format="yyyy-mm-dd">
+                                                            </div>
+                                                          
+                                                        </div>
+
+                                                        <div class="form-group"><label class="form-label">Select
+                                                                Time</label>
+                                                            <div class="form-control-wrap has-timepicker focused">
+                                                                <div class="form-icon form-icon-left"><em
+                                                                        class="icon ni ni-clock"></em></div><input
+                                                                    type="text" class="form-control time-picker"
+                                                                    placeholder="Input placeholder">
+                                                            </div>
+                                                        </div> -->
+                                                        
+
+                                                        <div class="form-group"><button type="submit"
+                                                            id="saveCampaignBtn"    class="btn btn-lg btn-primary">Send Messages</button></div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -236,67 +259,6 @@
 
 
 
-    <div class="modal fade" id="modalForm">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Upload File</h5><a href="#" class="close" data-bs-dismiss="modal"
-                        aria-label="Close"><em class="icon ni ni-cross"></em></a>
-                </div>
-                <div class="modal-body">
-                    <form action="#" class="form-validate is-alter">
-
-                        <div class="form-file"><input type="file" class="form-file-input" id="excel-file-upload"><label
-                                class="form-file-label" for="customFile">Choose file</label></div>
-                        <br><br>
-
-                        <div class="form-group text-center">
-                            <button id="upload-contact-btn" class="btn btn-lg btn-primary">Upload File</button>
-                        </div>
-
-                    </form>
-                </div>
-
-                <div class="modal-footer bg-light"><span class="sub-text"></span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="singleContactForm">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Contact</h5><a href="#" class="close" data-bs-dismiss="modal"
-                        aria-label="Close"><em class="icon ni ni-cross"></em></a>
-                </div>
-                <div class="modal-body">
-                    <form id="singleUploadForm" action="#" class="form-validate is-alter">
-                        <div class="form-group">
-                            <label class="form-label" for="full-name">Full Name</label>
-                            <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="contact-form-name" name="full-name" required>
-                                <sub class="error-label" id="full-name-error"></sub>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="whatsapp-number">Whatsapp Number</label>
-                            <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="contact-form-number" name="whatsapp-number" required>
-                                <sub class="error-label" id="whatsapp-number-error"></sub>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" id="singleContactUpload" class="btn btn-lg btn-primary">Add Contact</button>
-                        </div>
-                    </form>
-                    
-                    
-                </div>
-                <div class="modal-footer bg-light"><span class="sub-text"></span></div>
-            </div>
-        </div>
-    </div>
-
 
     <div class="pmo-lv pmo-dark"><a class="pmo-close" href="#"><em class="ni ni-cross"></em></a><a class="pmo-wrap"
             target="_blank" href="https://softnio.com/get-early-access/">
@@ -309,7 +271,7 @@
     <script src="{{ url_for('static', filename='js/bundlee5ca.js') }}?ver=3.2.3"></script>
     <script src="{{ url_for('static', filename='js/scriptse5ca.js') }}?ver=3.2.3"></script>
     <script src="{{ url_for('static', filename='js/demo-settingse5ca.js') }}?ver=3.2.3"></script>
-    <script src="{{ url_for('static', filename='js/custom/contacts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom/campaign.js') }}"></script>
 
 </body>
 

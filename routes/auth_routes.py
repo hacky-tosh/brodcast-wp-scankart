@@ -2,6 +2,7 @@ from flask import Blueprint
 from controller.auth import signup, login
 from controller.contacts import add_single_contact,get_all_contacts, upload_contacts
 from controller import auth
+from controller.campaign import send_bulk_sms
 
 auth_blueprint = Blueprint('auth', __name__)
 
@@ -26,3 +27,9 @@ def upload_multiple_contacts():
 @auth_blueprint.route('/get-contacts', methods=['GET'])
 def get_contacts():
     return get_all_contacts()
+
+
+@auth_blueprint.route('/send_bulk_sms',methods=["POST"])
+def send_sms():
+    print("send sms route")
+    return send_bulk_sms()

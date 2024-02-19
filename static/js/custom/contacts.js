@@ -6,6 +6,9 @@ $(document).ready(function () {
 
 
 
+
+
+
     $('#pid-all').on('change', function () {
         // Get the state of the "Select All" checkbox
         var isChecked = $(this).prop('checked');
@@ -14,19 +17,30 @@ $(document).ready(function () {
         $('[id^="pid-"]').prop('checked', isChecked);
     });
 
-    $('#singleContactUpload').on('click', function () {
-        let name = $('#contact-form-name').val();
-        let number = $('#contact-form-number').val();
-        let user_email = user_email
-        if (!name || !number) {
-            alert("Please enter all the fields");
+    $('#singleContactUpload').on('click', function (event) {
+
+        event.preventDefault(); 
+        if (validateForm()) {
+            console.log("Form is valid. Proceed with further actions.");
+        } else {
+            console.log("Form validation failed. Please correct errors.");
             return;
         }
+
+
+        let name = $('#contact-form-name').val();
+        let number = $('#contact-form-number').val();
+        let email = user_email
+
         let data = {
             "name": name,
             "number": number,
-            "user_email": user_email
+            "user_email": email
         }
+
+
+
+        console.log(data);
         $.ajax({
             url: url + 'add-contact',
             type: 'POST',
@@ -103,10 +117,15 @@ function displayUserData() {
             "email": user_email
         },
         success: function (response) {
+            console.log("🚀🚀🚀 ~ displayUserData ~ response:", response)
+
+            
             if (response.length == 0) {
                 $('#contacts-table').append('<tr ><td colspan="5">No contacts found</td></tr>');
                 return;
             } else {
+                $('#contacts-table').empty();
+                
                 let html = '';
                 for (let i = 0; i < response.length; i++) {
                     html += `
@@ -140,4 +159,35 @@ function displayUserData() {
 
         },
     });
+
+        
+
+}
+
+
+function validateForm() {
+    let name = $('#contact-form-name').val();
+    let number = $('#contact-form-number').val();
+
+    // Clear previous error messages
+    $('.error-message').remove();
+
+    // Validation
+    let isValid = true;
+    if (!name) {
+        $('#contact-form-name').after('<div class="error-message">Please enter your name</div>');
+        isValid = false;
+    }
+    if (!number) {
+        $('#contact-form-number').after('<div class="error-message">Please enter your whatsapp number</div>');
+        isValid = false;
+    }
+
+    // Custom phone number validation
+    if (number && !(/^\d+$/.test(number) && number.length >= 10 && number.length <= 13)) {
+        $('#contact-form-number').after('<div class="error-message">Please enter a valid phone number between 10 and 13 digits.</div>');
+        isValid = false;
+    }
+
+    return isValid;
 }

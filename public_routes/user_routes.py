@@ -16,6 +16,12 @@ def signup():
 
 
 @user_blueprint.route('/list-customers', methods=['GET'])
-@token_required
+# @token_required
 def home():
     return render_template('list-customers.html')
+
+
+@user_blueprint.route('/create-campaign', methods=['GET'])
+# @token_required
+def create_campaign():
+    return render_template('create-campaign.html')
